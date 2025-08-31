@@ -24,6 +24,9 @@
             justify-content: center;
             align-items: center;
             gap: 32px;
+            width: 100%;
+            max-width: 800px;
+            padding: 16px;
         }
 
         h1 {
@@ -31,11 +34,13 @@
             margin: 0;
             font-size: 2.5rem;
             letter-spacing: 2px;
+            text-align: center;
         }
 
         .container {
-            height: 400px;
-            width: 700px;
+            width: 100%;
+            max-width: 700px;
+            aspect-ratio: 7 / 4;
             background-color: rgb(229, 235, 235);
             display: flex;
             justify-content: center;
@@ -50,6 +55,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 24px;
+            display: block;
         }
 
         #change-btn {
@@ -70,6 +76,42 @@
         #change-btn:hover {
             background: linear-gradient(90deg, #b6c6e3 0%, #6d86b6 100%);
         }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 90vw;
+            }
+
+            .content-wrapper {
+                max-width: 95vw;
+                padding: 8px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 12px;
+            }
+
+            .container img {
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            #change-btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+                border-radius: 8px;
+            }
+        }
     </style>
 </head>
 
@@ -85,10 +127,14 @@
         const img = document.getElementById('main-image');
         const btn = document.getElementById('change-btn');
         const images = [
-            "https://cdn.pixabay.com/photo/2025/03/31/21/30/italy-9505450_1280.jpg",
+            "https://cdn.pixabay.com/photo/2021/08/27/18/50/water-6579313_1280.jpg",
             "https://cdn.pixabay.com/photo/2022/07/30/08/41/topkapi-palace-museum-7353338_1280.jpg",
             "https://cdn.pixabay.com/photo/2022/10/23/13/43/lake-7541307_1280.jpg",
-            "https://cdn.pixabay.com/photo/2025/06/11/22/12/kackar-mountains-9655200_1280.jpg"
+            "https://cdn.pixabay.com/photo/2025/06/11/22/12/kackar-mountains-9655200_1280.jpg",
+            "https://cdn.pixabay.com/photo/2025/06/15/15/03/switzerland-9661468_1280.jpg",
+            "https://cdn.pixabay.com/photo/2022/08/31/06/55/seaside-promenade-7422541_1280.jpg",
+            "https://cdn.pixabay.com/photo/2025/06/25/21/53/siberia-9680842_1280.jpg",
+            "https://cdn.pixabay.com/photo/2024/11/03/17/49/mountain-9172053_1280.jpg"
         ];
         let current = 0;
         btn.addEventListener('click', () => {
